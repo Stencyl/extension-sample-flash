@@ -20,16 +20,42 @@ Stencyl only recognizes SWFs. If you have a SWC, follow these steps to extract t
 HOW TO MAKE A FLASH EXTENSION
 -----------------------------
 
-In short, follow what's done here.
+1) Make a new folder under plaf/haxe/extensions/
 
-1) Make a new folder under plaf/haxe/extensions/ - if it helps, just copy and paste this folder there.
+2) It must contain these 5 files.
 
-2) Edit info.txt with the appropriate details.
+include.nmml (leave as-is)
 
-3) Edit icon.png to your liking. (Optional)
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+<haxeflag name="-swf-lib" value="library.swf" if="flash"/>
+</project>
 
-4) Provide the SWF library and name it library.swf. If you want to import multiple libraries, you can provide as many as you'd like, but you need to edit include.nmml to refer to them.
 
-5) Provide .hx source files, which can call functions directly from libraries. Alternatively, you can skip this step and call the Flash code directly from the game.
+blocks.xml (leave as-is)
 
-6) Enable the extension inside of Stencyl (Open game, click 'Settings', flip to the Extensions page and click Enable). Reopen the game and your extension will be ready for use.
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<palette>
+</palette>
+
+
+info.txt (edit the details to fit your case)
+
+name=Test Extension (Flash SWF)
+description=A test extension for Flash
+author=Jon
+website=http://www.stencyl.com
+version=1.0
+compatibility=flash
+
+icon.png - 32 x 32 icon
+
+library.swf - the SWF library you want to import. If it's a SWC, follow the instructions above.
+
+
+2) Enable the extension inside of Stencyl
+* Open game, click 'Settings'
+* Flip to the Extensions page and click Enable
+* Reopen the game
+
+3) Now, you can call the code inside the SWF through code blocks.
