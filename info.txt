@@ -1,3 +1,4 @@
+id=com.example.extension-flash
 name=Test Extension (Flash SWF)
 description=A test extension for Flash
 author=Jon
